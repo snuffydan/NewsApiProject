@@ -15,10 +15,10 @@
 /* Begin PBXFileReference section */
 		271676F8F2BC93F0E477E45331FC9EC4 /* Pods-NewsAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsAPI.release.xcconfig"; sourceTree = "<group>"; };
 		29398A77CDD6DB2F82CE237A096DFE92 /* Pods-NewsAPI-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewsAPI-acknowledgements.plist"; sourceTree = "<group>"; };
-		573CF4A20D7DC684966FA75622880E4A /* Pods-NewsAPI */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-NewsAPI"; path = Pods_NewsAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		573CF4A20D7DC684966FA75622880E4A /* Pods_NewsAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8B90BB669F820CE1064D92C66BF50602 /* Pods-NewsAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsAPI.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AEF39032E65EC0BF6B35A2E28F3BF8BD /* Pods-NewsAPI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewsAPI-dummy.m"; sourceTree = "<group>"; };
 		B185C55CA1DF13D85D2DCC101DA5D747 /* Pods-NewsAPI-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewsAPI-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B6499C5B5EE9D2BC94CF2AA3E234BFA9 /* Pods-NewsAPI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NewsAPI.modulemap"; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		318BF9897778AE4C68142082AA05C6A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				573CF4A20D7DC684966FA75622880E4A /* Pods-NewsAPI */,
+				573CF4A20D7DC684966FA75622880E4A /* Pods_NewsAPI.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			);
 			name = "Pods-NewsAPI";
 			productName = Pods_NewsAPI;
-			productReference = 573CF4A20D7DC684966FA75622880E4A /* Pods-NewsAPI */;
+			productReference = 573CF4A20D7DC684966FA75622880E4A /* Pods_NewsAPI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
