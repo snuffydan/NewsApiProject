@@ -11,6 +11,7 @@ import UIKit
 enum StoryboardIdentifiers: String {
     case UserInfo = "UserInfo"
     case Main = "Main"
+    case Common = "Common"
 }
 
 enum ViewControllerIdentifiers: String {
@@ -18,6 +19,7 @@ enum ViewControllerIdentifiers: String {
     case RegisterVC = "registerVC"
     case CommonAlertPopupVC = "alertPopUpVC"
     case DashboardVC = "dashboardVC"
+    case NewsDetailsVC = "newsDetailsVC"
 }
 
 enum CollectionViewCellIdentifiers: String {
@@ -29,9 +31,37 @@ enum TableViewCellIdentifier: String {
     case NewsByCategoryCell = "newsByCategoryCell"
 }
 
+//MARK: Networking
+
+enum Header: String {
+    case BasicAuthorization = "Authorization"
+}
+
+enum NewsService: String {
+    case GetLatestNews = "top-headlines?"
+    case GetEverything = "everything?"
+}
+
+enum ResponseStatus: String {
+    case Success = "ok"
+    case Error = "failure"
+}
+
+
+//MARK: Errors
+
+enum GeneralErrorTitles: String {
+    case GeneralError = "Error"
+}
+
+enum GeneralErrors: String {
+    case NoResponseFromServer = "An error occured. Please try again later"
+    case NoInternet = "Please make sure your mobile has internet"
+}
+
 // MARK: Other Enumerations
 
-enum NewsCategoryTextToShow: String, CaseIterable {
+enum NewsCategory: String, CaseIterable {
     case Health = "Health"
     case Technology = "Technology"
     case Finance = "Finance"
@@ -41,14 +71,4 @@ enum NewsCategoryTextToShow: String, CaseIterable {
     case Entertainment = "Entertainment"
     case General = "General"
     case Science = "Science"
-}
-
-enum NewsCategory: String {
-    case Business = "business"
-    case Entertainment = "entertainment"
-    case General = "general"
-    case Health = "health"
-    case Science = "science"
-    case Sports = "sports"
-    case Technology = "technology"
 }
