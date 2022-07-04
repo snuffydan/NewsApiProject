@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommonAlertPopUpViewController: UIViewController {
+class CommonAlertPopUpViewController: BaseViewController {
     
     @IBOutlet weak var lblAlertMsg: UILabel!
     @IBOutlet weak var btnOk: UIButton!

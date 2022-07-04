@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: BaseViewController {
     
     @IBOutlet weak var txtSearch: UITextField!
     @IBOutlet weak var collectionViewLatestNews: UICollectionView!
@@ -23,6 +23,24 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         
         collectionViewNewsCategory.reloadData()
+        getLatestNews()
+    }
+    
+    private func getLatestNews() {
+        if (isConnectedToInternet()) {
+            showActivityIndicator()
+            
+            NewsManager.getLatestNews() { (result) in
+                self.hideActivityIndicator()
+                
+                if result?.status == ResponseStatus.Success.rawValue {
+                    self.latestNewsList = result?.articles ?? []
+                    self.collectionViewLatestNews.reloadData()
+                } else {
+                    self.showCustomAlert(title: "", message: GeneralErrors.NoResponseFromServer.rawValue)
+                }
+            }
+        }
     }
 
     @IBAction func tappedSearch(_ sender: Any) {
@@ -66,7 +84,7 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             let data = self.latestNewsList[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellIdentifiers.LatestNewsCell.rawValue, for: indexPath as IndexPath) as! LatestNewsCollectionViewCell
             
-//            cell.setUpCell(billerType: data)
+            cell.setUpCell(article: data)
             return cell
         } else {
             let data = self.newsCategories[indexPath.row]
@@ -82,8 +100,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == collectionViewLatestNews {
-            let width = collectionView.bounds.size.width - 50
-            return CGSize(width: width, height: collectionView.bounds.size.height)
+            let width = collectionView.bounds.size.width - 30
+            return CGSize(width: width, height: 240)
         } else {
             let data = self.newsCategories[indexPath.row]
             let itemSize = CGSize(width: data.size(withAttributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 12)]).width + 25, height: 32)

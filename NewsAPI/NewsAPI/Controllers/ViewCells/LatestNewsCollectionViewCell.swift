@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class LatestNewsCollectionViewCell: UICollectionViewCell {
     
@@ -15,9 +16,9 @@ class LatestNewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblDescription: UILabel!
     
     func setUpCell(article: Article) {
-        lblAuthor.text = article.author
+        lblAuthor.text = article.author != nil ? "by \(article.author ?? "")" : ""
         lblTitle.text = article.title
         lblDescription.text = article.description
-//        imgBackground.sd_setImage(with: article.imageUrl, placeholderImage: #imageLiteral(resourceName: "gradient_bg"))
+        imgBackground.sd_setImage(with: article.imageUrl, placeholderImage: #imageLiteral(resourceName: "gradient_bg"))
     }
 }

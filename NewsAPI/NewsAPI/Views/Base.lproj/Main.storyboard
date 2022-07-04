@@ -137,13 +137,13 @@
                                             <constraint firstAttribute="trailing" secondItem="mac-O5-er8" secondAttribute="trailing" id="hlc-X0-W5f"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RO3-F7-pdU">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RO3-F7-pdU">
                                         <rect key="frame" x="30" y="114" width="290" height="240"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="240" id="wnF-Hy-ENo"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9B2-00-BPy">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9B2-00-BPy">
                                             <size key="itemSize" width="300" height="240"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -151,20 +151,29 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="latestNewsCell" id="phd-ww-AtV" customClass="LatestNewsCollectionViewCell" customModule="NewsAPI" customModuleProvider="target">
-                                                <rect key="frame" x="-5" y="0.0" width="300" height="240"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="X74-5r-zdi">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADT-Ug-UDQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="340" height="240"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-jd-QuQ">
-                                                                    <rect key="frame" x="-56" y="56" width="240" height="128"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_bg" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-jd-QuQ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Ryan Browne" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxP-4i-pIK">
-                                                                    <rect key="frame" x="43" y="109" width="42" height="21"/>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-Qi-BsH">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.29031143707482993" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Ryan Browne" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxP-4i-pIK">
+                                                                    <rect key="frame" x="10" y="20" width="280" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="14" id="mEN-hr-hkZ"/>
                                                                     </constraints>
@@ -173,13 +182,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto investors should be prepared to lose all their money, BOE governor says" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuZ-mt-FvF">
-                                                                    <rect key="frame" x="43" y="109" width="610" height="20"/>
+                                                                    <rect key="frame" x="10" y="39" width="280" height="57.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C67-4f-x6F">
-                                                                    <rect key="frame" x="43" y="109" width="527" height="12"/>
+                                                                    <rect key="frame" x="10" y="195" width="280" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="vWe-S6-Hzc"/>
                                                                     </constraints>
@@ -192,17 +201,20 @@
                                                             <constraints>
                                                                 <constraint firstItem="mxP-4i-pIK" firstAttribute="leading" secondItem="ADT-Ug-UDQ" secondAttribute="leading" constant="10" id="9Se-wi-obb"/>
                                                                 <constraint firstAttribute="trailing" secondItem="mxP-4i-pIK" secondAttribute="trailing" constant="10" id="CQS-d7-VmN"/>
+                                                                <constraint firstAttribute="trailing" secondItem="lmk-jd-QuQ" secondAttribute="trailing" id="IR9-ck-9dh"/>
                                                                 <constraint firstItem="C67-4f-x6F" firstAttribute="leading" secondItem="ADT-Ug-UDQ" secondAttribute="leading" constant="10" id="KX7-2l-0BX"/>
+                                                                <constraint firstAttribute="trailing" secondItem="n3R-Qi-BsH" secondAttribute="trailing" id="NyJ-ua-UfS"/>
+                                                                <constraint firstItem="n3R-Qi-BsH" firstAttribute="leading" secondItem="ADT-Ug-UDQ" secondAttribute="leading" id="Z8z-L6-hXl"/>
                                                                 <constraint firstAttribute="bottom" secondItem="lmk-jd-QuQ" secondAttribute="bottom" id="Zqh-aR-CyE"/>
+                                                                <constraint firstAttribute="bottom" secondItem="n3R-Qi-BsH" secondAttribute="bottom" id="fJo-3x-5yo"/>
                                                                 <constraint firstItem="lmk-jd-QuQ" firstAttribute="top" secondItem="ADT-Ug-UDQ" secondAttribute="top" id="ghv-2o-wM9"/>
                                                                 <constraint firstItem="lmk-jd-QuQ" firstAttribute="leading" secondItem="ADT-Ug-UDQ" secondAttribute="leading" id="hmh-ZB-4G1"/>
                                                                 <constraint firstAttribute="bottom" secondItem="C67-4f-x6F" secondAttribute="bottom" constant="5" id="j7q-GE-CKz"/>
-                                                                <constraint firstAttribute="trailing" secondItem="lmk-jd-QuQ" secondAttribute="trailing" id="jZv-t4-MXD"/>
+                                                                <constraint firstItem="n3R-Qi-BsH" firstAttribute="top" secondItem="ADT-Ug-UDQ" secondAttribute="top" id="lLJ-hw-rAT"/>
                                                                 <constraint firstItem="mxP-4i-pIK" firstAttribute="top" secondItem="ADT-Ug-UDQ" secondAttribute="top" constant="20" id="o04-md-CZ9"/>
                                                                 <constraint firstAttribute="trailing" secondItem="OuZ-mt-FvF" secondAttribute="trailing" constant="10" id="oob-Qb-M6K"/>
                                                                 <constraint firstAttribute="trailing" secondItem="C67-4f-x6F" secondAttribute="trailing" constant="10" id="rBu-rY-W2V"/>
                                                                 <constraint firstItem="OuZ-mt-FvF" firstAttribute="top" secondItem="mxP-4i-pIK" secondAttribute="bottom" constant="5" id="uLN-hY-9Z0"/>
-                                                                <constraint firstItem="C67-4f-x6F" firstAttribute="top" secondItem="OuZ-mt-FvF" secondAttribute="bottom" constant="20" id="vyf-tp-txu"/>
                                                                 <constraint firstItem="OuZ-mt-FvF" firstAttribute="leading" secondItem="ADT-Ug-UDQ" secondAttribute="leading" constant="10" id="zYl-LF-POR"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
@@ -218,6 +230,11 @@
                                                         <constraint firstAttribute="trailing" secondItem="ADT-Ug-UDQ" secondAttribute="trailing" id="frX-bi-13g"/>
                                                         <constraint firstItem="ADT-Ug-UDQ" firstAttribute="top" secondItem="X74-5r-zdi" secondAttribute="top" id="szY-CU-yOP"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </collectionViewCellContentView>
                                                 <connections>
                                                     <outlet property="imgBackground" destination="lmk-jd-QuQ" id="TRQ-VX-i8S"/>
@@ -233,7 +250,7 @@
                                         </connections>
                                     </collectionView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SQv-yt-QMf">
-                                        <rect key="frame" x="30" y="364" width="290" height="32"/>
+                                        <rect key="frame" x="30" y="379" width="290" height="32"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="j88-RM-c8S"/>
@@ -321,7 +338,7 @@
                                         </connections>
                                     </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cuV-3s-m4J">
-                                        <rect key="frame" x="30" y="406" width="260" height="162"/>
+                                        <rect key="frame" x="30" y="421" width="260" height="147"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsByCategoryCell" rowHeight="128" id="p3i-64-JNF" customClass="NewsByCategoryTableViewCell" customModule="NewsAPI" customModuleProvider="target">
@@ -396,7 +413,7 @@
                                     <constraint firstItem="p6o-W4-dcA" firstAttribute="leading" secondItem="dLb-Fp-MxV" secondAttribute="leading" constant="30" id="7od-R4-CRl"/>
                                     <constraint firstItem="RO3-F7-pdU" firstAttribute="top" secondItem="p6o-W4-dcA" secondAttribute="bottom" constant="10" id="Gia-OQ-qUZ"/>
                                     <constraint firstItem="cuV-3s-m4J" firstAttribute="top" secondItem="SQv-yt-QMf" secondAttribute="bottom" constant="10" id="HqI-eb-2nI"/>
-                                    <constraint firstItem="SQv-yt-QMf" firstAttribute="top" secondItem="RO3-F7-pdU" secondAttribute="bottom" constant="10" id="UKr-HK-2Ie"/>
+                                    <constraint firstItem="SQv-yt-QMf" firstAttribute="top" secondItem="RO3-F7-pdU" secondAttribute="bottom" constant="25" id="UKr-HK-2Ie"/>
                                     <constraint firstItem="cuV-3s-m4J" firstAttribute="leading" secondItem="dLb-Fp-MxV" secondAttribute="leading" constant="30" id="VBs-qP-Iuo"/>
                                     <constraint firstAttribute="trailing" secondItem="LgC-nL-Yc8" secondAttribute="trailing" constant="30" id="XKm-uI-zeL"/>
                                     <constraint firstItem="LgC-nL-Yc8" firstAttribute="leading" secondItem="dLb-Fp-MxV" secondAttribute="leading" constant="30" id="b2F-tw-Son"/>
@@ -434,6 +451,7 @@
     </scenes>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="gradient_bg" width="375" height="110"/>
         <image name="notification-bell" width="33" height="32"/>
         <image name="search-text" width="14" height="13.5"/>
         <systemColor name="systemBackgroundColor">

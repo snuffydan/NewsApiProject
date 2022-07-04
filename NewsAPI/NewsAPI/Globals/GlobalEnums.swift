@@ -11,6 +11,7 @@ import UIKit
 enum StoryboardIdentifiers: String {
     case UserInfo = "UserInfo"
     case Main = "Main"
+    case Common = "Common"
 }
 
 enum ViewControllerIdentifiers: String {
@@ -27,6 +28,29 @@ enum CollectionViewCellIdentifiers: String {
 
 enum TableViewCellIdentifier: String {
     case NewsByCategoryCell = "newsByCategoryCell"
+}
+
+//MARK: Networking
+
+enum Header: String {
+    case BasicAuthorization = "Authorization"
+}
+
+enum NewsService: String {
+    case GetLatestNews = "top-headlines?"
+}
+
+enum ResponseStatus: String {
+    case Success = "ok"
+    case Error = "failure"
+}
+
+
+//MARK: Errors
+
+enum GeneralErrors: String {
+    case NoResponseFromServer = "An error occured. Please try again later"
+    case NoInternet = "Please make sure your mobile has internet"
 }
 
 // MARK: Other Enumerations
