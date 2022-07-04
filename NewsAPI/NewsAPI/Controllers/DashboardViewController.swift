@@ -60,6 +60,22 @@ class DashboardViewController: BaseViewController {
             }
         }
     }
+    
+    private func searchNews(searchText: String) {
+        if (isConnectedToInternet()) {
+            showActivityIndicator()
+            
+            NewsManager.searchNews(searchText: searchText) { (result) in
+                self.hideActivityIndicator()
+                
+                if result?.status == ResponseStatus.Success.rawValue {
+                    // TODO:
+                } else {
+                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.NoResponseFromServer.rawValue)
+                }
+            }
+        }
+    }
 
     @IBAction func tappedSearch(_ sender: Any) {
     }
@@ -68,6 +84,12 @@ class DashboardViewController: BaseViewController {
     }
     
     @IBAction func tappedSeeAll(_ sender: Any) {
+    }
+    
+    private func goToNewsDetails(article: Article) {
+        let newsDetailsVC = UIStoryboard(name: StoryboardIdentifiers.Main.rawValue, bundle: nil).instantiateViewController(withIdentifier: ViewControllerIdentifiers.NewsDetailsVC.rawValue) as! NewsDetailsViewController
+        newsDetailsVC.newsArticle = article
+        self.navigationController?.pushViewController(newsDetailsVC, animated: true)
     }
     
 }
@@ -84,6 +106,11 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifier.NewsByCategoryCell.rawValue, for: indexPath) as! NewsByCategoryTableViewCell
         cell.setUpCell(article: data)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = self.latestNewsList[indexPath.row]
+        self.goToNewsDetails(article: data)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -122,7 +149,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewLatestNews {
-            // TODO:
+            let data = self.latestNewsList[indexPath.row]
+            self.goToNewsDetails(article: data)
         } else {
             let data = self.newsCategories[indexPath.row]
             let selectedEnumValue = NewsCategory(rawValue: data)!

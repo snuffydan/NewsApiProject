@@ -25,6 +25,7 @@
 		2F4EA9AF2871AD8100B40CCF /* NewsByCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4EA9AE2871AD8100B40CCF /* NewsByCategoryTableViewCell.swift */; };
 		2FCB31492871EEA700A8575E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB31482871EEA700A8575E /* Reachability.swift */; };
 		2FCB314B2871F19C00A8575E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB314A2871F19C00A8575E /* ActivityIndicator.swift */; };
+		2FCB314F287350FF00A8575E /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB314E287350FF00A8575E /* NewsDetailsViewController.swift */; };
 		CE8F0C8D2849278C002EB57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F0C8C2849278C002EB57A /* AppDelegate.swift */; };
 		CE8F0C942849278C002EB57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F0C922849278C002EB57A /* Main.storyboard */; };
 		CE8F0C962849278F002EB57A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8F0C952849278F002EB57A /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		2F4EA9AE2871AD8100B40CCF /* NewsByCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsByCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		2FCB31482871EEA700A8575E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2FCB314A2871F19C00A8575E /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		2FCB314E287350FF00A8575E /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		73611FB4CE944CCD77D746BC /* Pods-NewsAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAPI.debug.xcconfig"; path = "Target Support Files/Pods-NewsAPI/Pods-NewsAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		CE8F0C892849278C002EB57A /* NewsAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F0C8C2849278C002EB57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		2F36F04928535E8D0044E46D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2FCB314D287350F000A8575E /* News */,
 				2F4EA9A92871AD1900B40CCF /* ViewCells */,
 				2F4EA9A32871733100B40CCF /* UserInfo */,
 				2F4EA9A028716B2B00B40CCF /* Common */,
@@ -170,6 +173,14 @@
 				2F4EA9AE2871AD8100B40CCF /* NewsByCategoryTableViewCell.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		2FCB314D287350F000A8575E /* News */ = {
+			isa = PBXGroup;
+			children = (
+				2FCB314E287350FF00A8575E /* NewsDetailsViewController.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		5C3C44412B577B46BFAD23CC /* Frameworks */ = {
@@ -347,6 +358,7 @@
 				2F4EA99F28716B2400B40CCF /* CommonAlertPopUpViewController.swift in Sources */,
 				2F4EA9A62871A88000B40CCF /* NewsManager.swift in Sources */,
 				2F36F04D28536BCD0044E46D /* LoginViewController.swift in Sources */,
+				2FCB314F287350FF00A8575E /* NewsDetailsViewController.swift in Sources */,
 				2F36F04F28536BD80044E46D /* BaseViewController.swift in Sources */,
 				2F36F056285372330044E46D /* RegisterViewController.swift in Sources */,
 				2FCB31492871EEA700A8575E /* Reachability.swift in Sources */,
@@ -513,7 +525,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = UserInfo;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,7 +554,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = UserInfo;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

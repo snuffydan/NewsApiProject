@@ -19,6 +19,7 @@ enum ViewControllerIdentifiers: String {
     case RegisterVC = "registerVC"
     case CommonAlertPopupVC = "alertPopUpVC"
     case DashboardVC = "dashboardVC"
+    case NewsDetailsVC = "newsDetailsVC"
 }
 
 enum CollectionViewCellIdentifiers: String {
@@ -38,6 +39,7 @@ enum Header: String {
 
 enum NewsService: String {
     case GetLatestNews = "top-headlines?"
+    case GetEverything = "everything?"
 }
 
 enum ResponseStatus: String {
