@@ -48,6 +48,10 @@ enum ResponseStatus: String {
 
 //MARK: Errors
 
+enum GeneralErrorTitles: String {
+    case GeneralError = "Error"
+}
+
 enum GeneralErrors: String {
     case NoResponseFromServer = "An error occured. Please try again later"
     case NoInternet = "Please make sure your mobile has internet"
@@ -55,7 +59,7 @@ enum GeneralErrors: String {
 
 // MARK: Other Enumerations
 
-enum NewsCategoryTextToShow: String, CaseIterable {
+enum NewsCategory: String, CaseIterable {
     case Health = "Health"
     case Technology = "Technology"
     case Finance = "Finance"
@@ -65,14 +69,4 @@ enum NewsCategoryTextToShow: String, CaseIterable {
     case Entertainment = "Entertainment"
     case General = "General"
     case Science = "Science"
-}
-
-enum NewsCategory: String {
-    case Business = "business"
-    case Entertainment = "entertainment"
-    case General = "general"
-    case Health = "health"
-    case Science = "science"
-    case Sports = "sports"
-    case Technology = "technology"
 }

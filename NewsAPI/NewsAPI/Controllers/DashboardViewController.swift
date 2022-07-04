@@ -15,15 +15,16 @@ class DashboardViewController: BaseViewController {
     @IBOutlet weak var tableViewNewsByCategory: UITableView!
     
     var latestNewsList: [Article] = []
-    var newsByCategory: [Article] = []
-    var newsCategories: [String] = NewsCategoryTextToShow.allCases.map { $0.rawValue }
-    var selectedCategory: NewsCategoryTextToShow = .Health
+    var newsByCategoryList: [Article] = []
+    var newsCategories: [String] = NewsCategory.allCases.map { $0.rawValue }
+    var selectedCategory: NewsCategory = .Health
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionViewNewsCategory.reloadData()
         getLatestNews()
+        getNewsByCategory(category: selectedCategory.rawValue)
     }
     
     private func getLatestNews() {
@@ -37,7 +38,24 @@ class DashboardViewController: BaseViewController {
                     self.latestNewsList = result?.articles ?? []
                     self.collectionViewLatestNews.reloadData()
                 } else {
-                    self.showCustomAlert(title: "", message: GeneralErrors.NoResponseFromServer.rawValue)
+                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.NoResponseFromServer.rawValue)
+                }
+            }
+        }
+    }
+    
+    private func getNewsByCategory(category: String) {
+        if (isConnectedToInternet()) {
+            showActivityIndicator()
+            
+            NewsManager.getNewsByCategory(category: category) { (result) in
+                self.hideActivityIndicator()
+                
+                if result?.status == ResponseStatus.Success.rawValue {
+                    self.newsByCategoryList = result?.articles ?? []
+                    self.tableViewNewsByCategory.reloadData()
+                } else {
+                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.NoResponseFromServer.rawValue)
                 }
             }
         }
@@ -57,15 +75,19 @@ class DashboardViewController: BaseViewController {
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsByCategory.count
+        return newsByCategoryList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = newsByCategory[indexPath.row]
+        let data = newsByCategoryList[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifier.NewsByCategoryCell.rawValue, for: indexPath) as! NewsByCategoryTableViewCell
-//        cell.setUpCell(data: data)
+        cell.setUpCell(article: data)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 128
     }
 }
 
@@ -95,6 +117,18 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             cell.setUpView(category: data, isSelected: isSelected)
             
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == collectionViewLatestNews {
+            // TODO:
+        } else {
+            let data = self.newsCategories[indexPath.row]
+            let selectedEnumValue = NewsCategory(rawValue: data)!
+            selectedCategory = selectedEnumValue
+            self.collectionViewNewsCategory.reloadData()
+            self.getNewsByCategory(category: data.lowercased())
         }
     }
     

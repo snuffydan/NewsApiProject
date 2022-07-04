@@ -337,9 +337,10 @@
                                             <outlet property="delegate" destination="cPh-hU-eY1" id="Pap-jI-Ccu"/>
                                         </connections>
                                     </collectionView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cuV-3s-m4J">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cuV-3s-m4J">
                                         <rect key="frame" x="30" y="421" width="260" height="147"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsByCategoryCell" rowHeight="128" id="p3i-64-JNF" customClass="NewsByCategoryTableViewCell" customModule="NewsAPI" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.5" width="260" height="128"/>
@@ -349,12 +350,25 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD3-Ap-cXh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="128"/>
+                                                            <rect key="frame" x="0.0" y="5" width="260" height="118"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ow6-7f-1Tq">
-                                                                    <rect key="frame" x="10" y="-0.5" width="240" height="128"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ow6-7f-1Tq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="118"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Js7-7H-a6k">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="118"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.29031143710000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 things to know about the 'conundrum' of lupus" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg6-n9-m3f">
                                                                     <rect key="frame" x="10" y="10" width="240" height="33.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -362,13 +376,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matt Villano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POd-kd-s4j">
-                                                                    <rect key="frame" x="10" y="103" width="118" height="15"/>
+                                                                    <rect key="frame" x="10" y="93" width="118" height="15"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday, 9 May 2021" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74H-Ra-AEx">
-                                                                    <rect key="frame" x="132" y="103" width="118" height="15"/>
+                                                                    <rect key="frame" x="132" y="93" width="118" height="15"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -376,14 +390,22 @@
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
+                                                                <constraint firstItem="Js7-7H-a6k" firstAttribute="top" secondItem="vD3-Ap-cXh" secondAttribute="top" id="3xc-UC-m90"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ow6-7f-1Tq" secondAttribute="bottom" id="5VX-Fa-p7o"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Js7-7H-a6k" secondAttribute="bottom" id="AFc-mu-zom"/>
                                                                 <constraint firstItem="POd-kd-s4j" firstAttribute="width" secondItem="74H-Ra-AEx" secondAttribute="width" id="Fa7-br-CWk"/>
                                                                 <constraint firstItem="Yg6-n9-m3f" firstAttribute="top" secondItem="vD3-Ap-cXh" secondAttribute="top" constant="10" id="Fpf-MM-I9g"/>
+                                                                <constraint firstItem="Js7-7H-a6k" firstAttribute="leading" secondItem="vD3-Ap-cXh" secondAttribute="leading" id="HVg-qO-rUq"/>
                                                                 <constraint firstItem="POd-kd-s4j" firstAttribute="leading" secondItem="vD3-Ap-cXh" secondAttribute="leading" constant="10" id="N8N-2l-uki"/>
+                                                                <constraint firstItem="ow6-7f-1Tq" firstAttribute="top" secondItem="vD3-Ap-cXh" secondAttribute="top" id="RSX-E9-GTk"/>
                                                                 <constraint firstItem="Yg6-n9-m3f" firstAttribute="leading" secondItem="vD3-Ap-cXh" secondAttribute="leading" constant="10" id="Yu2-4L-ixS"/>
                                                                 <constraint firstAttribute="bottom" secondItem="POd-kd-s4j" secondAttribute="bottom" constant="10" id="bbW-Aj-aJL"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Yg6-n9-m3f" secondAttribute="trailing" constant="10" id="fj8-PA-OsW"/>
                                                                 <constraint firstAttribute="trailing" secondItem="74H-Ra-AEx" secondAttribute="trailing" constant="10" id="jIx-m4-O1K"/>
+                                                                <constraint firstItem="ow6-7f-1Tq" firstAttribute="leading" secondItem="vD3-Ap-cXh" secondAttribute="leading" id="jL8-0X-QYH"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Js7-7H-a6k" secondAttribute="trailing" id="q09-tO-T4l"/>
                                                                 <constraint firstAttribute="bottom" secondItem="74H-Ra-AEx" secondAttribute="bottom" constant="10" id="tKF-8C-Z2S"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ow6-7f-1Tq" secondAttribute="trailing" id="vMz-VL-qc4"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -395,10 +417,21 @@
                                                     <constraints>
                                                         <constraint firstItem="vD3-Ap-cXh" firstAttribute="leading" secondItem="D8n-yL-qOW" secondAttribute="leading" id="0OD-0D-4aS"/>
                                                         <constraint firstAttribute="trailing" secondItem="vD3-Ap-cXh" secondAttribute="trailing" id="9vF-0f-xS2"/>
-                                                        <constraint firstAttribute="bottom" secondItem="vD3-Ap-cXh" secondAttribute="bottom" id="Fdu-j0-Iqh"/>
-                                                        <constraint firstItem="vD3-Ap-cXh" firstAttribute="top" secondItem="D8n-yL-qOW" secondAttribute="top" id="Ftm-aX-ilp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vD3-Ap-cXh" secondAttribute="bottom" constant="5" id="Fdu-j0-Iqh"/>
+                                                        <constraint firstItem="vD3-Ap-cXh" firstAttribute="top" secondItem="D8n-yL-qOW" secondAttribute="top" constant="5" id="Ftm-aX-ilp"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imgBackgroundView" destination="ow6-7f-1Tq" id="Usy-Ib-vkC"/>
+                                                    <outlet property="lblAuthor" destination="POd-kd-s4j" id="Y4B-el-mav"/>
+                                                    <outlet property="lblDateTime" destination="74H-Ra-AEx" id="sxD-eP-aW5"/>
+                                                    <outlet property="lblTitle" destination="Yg6-n9-m3f" id="UlK-bB-fKy"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
