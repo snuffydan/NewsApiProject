@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsByCategoryCell" rowHeight="128" id="B8f-S8-Hwd" customClass="NewsByCategoryTableViewCell" customModule="NewsAPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B8f-S8-Hwd" id="Gt3-ir-GY6">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vi1-KQ-92h">
+                        <rect key="frame" x="0.0" y="5" width="414" height="34"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eV2-0K-jcf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkT-Tb-OQr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.29031143710000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 things to know about the 'conundrum' of lupus" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7X-7r-E9g">
+                                <rect key="frame" x="10" y="10" width="394" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matt Villano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0T-w3-wmZ">
+                                <rect key="frame" x="10" y="9" width="118" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday, 9 May 2021" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5L-kp-jAJ">
+                                <rect key="frame" x="286" y="9" width="118" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T0T-w3-wmZ" firstAttribute="leading" secondItem="vi1-KQ-92h" secondAttribute="leading" constant="10" id="1G0-ks-Dbh"/>
+                            <constraint firstItem="eV2-0K-jcf" firstAttribute="leading" secondItem="vi1-KQ-92h" secondAttribute="leading" id="4zs-qx-kg6"/>
+                            <constraint firstAttribute="bottom" secondItem="eV2-0K-jcf" secondAttribute="bottom" id="9HV-FL-c1G"/>
+                            <constraint firstItem="T0T-w3-wmZ" firstAttribute="width" secondItem="W5L-kp-jAJ" secondAttribute="width" id="EKf-3A-9gq"/>
+                            <constraint firstAttribute="bottom" secondItem="qkT-Tb-OQr" secondAttribute="bottom" id="HhR-MF-xmA"/>
+                            <constraint firstAttribute="bottom" secondItem="W5L-kp-jAJ" secondAttribute="bottom" constant="10" id="PYd-gL-OmK"/>
+                            <constraint firstItem="y7X-7r-E9g" firstAttribute="leading" secondItem="vi1-KQ-92h" secondAttribute="leading" constant="10" id="Pmm-xG-w3x"/>
+                            <constraint firstAttribute="trailing" secondItem="W5L-kp-jAJ" secondAttribute="trailing" constant="10" id="WL7-d9-RvA"/>
+                            <constraint firstItem="eV2-0K-jcf" firstAttribute="top" secondItem="vi1-KQ-92h" secondAttribute="top" id="b7E-3I-BF8"/>
+                            <constraint firstAttribute="trailing" secondItem="y7X-7r-E9g" secondAttribute="trailing" constant="10" id="e0a-ru-22K"/>
+                            <constraint firstItem="qkT-Tb-OQr" firstAttribute="leading" secondItem="vi1-KQ-92h" secondAttribute="leading" id="frY-1S-xvw"/>
+                            <constraint firstItem="y7X-7r-E9g" firstAttribute="top" secondItem="vi1-KQ-92h" secondAttribute="top" constant="10" id="hCV-nL-FlS"/>
+                            <constraint firstAttribute="trailing" secondItem="qkT-Tb-OQr" secondAttribute="trailing" id="kWk-dF-gvB"/>
+                            <constraint firstAttribute="trailing" secondItem="eV2-0K-jcf" secondAttribute="trailing" id="oxQ-PY-pPD"/>
+                            <constraint firstItem="qkT-Tb-OQr" firstAttribute="top" secondItem="vi1-KQ-92h" secondAttribute="top" id="pXN-A4-38g"/>
+                            <constraint firstAttribute="bottom" secondItem="T0T-w3-wmZ" secondAttribute="bottom" constant="10" id="pyI-yI-Kh7"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vi1-KQ-92h" firstAttribute="leading" secondItem="Gt3-ir-GY6" secondAttribute="leading" id="Fla-mc-ivA"/>
+                    <constraint firstAttribute="bottom" secondItem="vi1-KQ-92h" secondAttribute="bottom" constant="5" id="QSM-kR-lkk"/>
+                    <constraint firstAttribute="trailing" secondItem="vi1-KQ-92h" secondAttribute="trailing" id="uJY-Uh-Xzn"/>
+                    <constraint firstItem="vi1-KQ-92h" firstAttribute="top" secondItem="Gt3-ir-GY6" secondAttribute="top" constant="5" id="xI6-vA-H9s"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgBackgroundView" destination="eV2-0K-jcf" id="Ed3-Nd-IMa"/>
+                <outlet property="lblAuthor" destination="T0T-w3-wmZ" id="PgC-m3-jfZ"/>
+                <outlet property="lblDateTime" destination="W5L-kp-jAJ" id="LH9-o8-LYj"/>
+                <outlet property="lblTitle" destination="y7X-7r-E9g" id="kGb-ck-iOX"/>
+            </connections>
+            <point key="canvasLocation" x="-567" y="65"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

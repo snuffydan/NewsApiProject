@@ -5,6 +5,6 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>UserInfo</string>
+	<string>Common</string>
 </dict>
 </plist>

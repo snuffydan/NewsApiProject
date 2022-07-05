@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u3c-cD-Y25">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -108,8 +108,38 @@
             </objects>
             <point key="canvasLocation" x="1736.25" y="761.61971830985919"/>
         </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="wq1-hB-svc">
+            <objects>
+                <viewController storyboardIdentifier="initialVC" id="u3c-cD-Y25" customClass="InitialViewController" customModule="NewsAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9gy-uU-lRp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-B4-vCS">
+                                <rect key="frame" x="117" y="333" width="180" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="9QW-Yo-I3D"/>
+                                    <constraint firstAttribute="height" constant="240" id="slX-s3-W2S"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G4L-eF-TRi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s1H-B4-vCS" firstAttribute="centerX" secondItem="G4L-eF-TRi" secondAttribute="centerX" id="NRA-Fz-6wI"/>
+                            <constraint firstItem="s1H-B4-vCS" firstAttribute="centerY" secondItem="G4L-eF-TRi" secondAttribute="centerY" id="eVa-nw-dgf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AMP-S5-R2O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AH-DA-gl4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-722" y="7"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="logo" width="341" height="341"/>
         <image name="warning-red" width="132" height="125"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
