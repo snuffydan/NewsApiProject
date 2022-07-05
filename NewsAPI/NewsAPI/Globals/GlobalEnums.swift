@@ -21,6 +21,7 @@ enum ViewControllerIdentifiers: String {
     case DashboardVC = "dashboardVC"
     case NewsDetailsVC = "newsDetailsVC"
     case InitialVC = "initialVC"
+    case AllNewsVC = "allNewsVC"
 }
 
 enum CollectionViewCellIdentifiers: String {

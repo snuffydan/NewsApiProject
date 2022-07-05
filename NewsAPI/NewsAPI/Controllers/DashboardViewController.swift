@@ -90,6 +90,8 @@ class DashboardViewController: BaseViewController {
     }
     
     @IBAction func tappedSeeAll(_ sender: Any) {
+        let allNewsVC = UIStoryboard(name: StoryboardIdentifiers.Main.rawValue, bundle: nil).instantiateViewController(withIdentifier: ViewControllerIdentifiers.AllNewsVC.rawValue) as! AllNewsViewController
+        self.navigationController?.pushViewController(allNewsVC, animated: true)
     }
     
     private func goToNewsDetails(article: Article) {
@@ -115,7 +117,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = self.latestNewsList[indexPath.row]
+        let data = self.newsByCategoryList[indexPath.row]
         self.goToNewsDetails(article: data)
     }
     
