@@ -31,6 +31,22 @@ enum TableViewCellIdentifier: String {
     case NewsByCategoryCell = "newsByCategoryCell"
 }
 
+// MARK: Database
+
+enum DatabaseName: String {
+    case User = "User"
+}
+
+enum EntityName: String {
+    case UserData = "UserData"
+}
+
+enum AttributeName: String {
+    case Email = "email"
+    case Username = "username"
+    case Password = "password"
+}
+
 //MARK: Networking
 
 enum Header: String {
@@ -55,8 +71,12 @@ enum GeneralErrorTitles: String {
 }
 
 enum GeneralErrors: String {
-    case NoResponseFromServer = "An error occured. Please try again later"
+    case ErrorOccured = "An error occured. Please try again later"
     case NoInternet = "Please make sure your mobile has internet"
+    case DuplicateEmail = "Email address already exists. Please enter another email address"
+    case DuplicateUsername = "Username already exists. Please enter another username"
+    case InvalidUsername = "Invalid username. Please try again"
+    case InvalidPassword = "Invalid password. Please try again"
 }
 
 // MARK: Other Enumerations
