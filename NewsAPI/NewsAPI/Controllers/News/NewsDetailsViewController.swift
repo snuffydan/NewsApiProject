@@ -25,9 +25,9 @@ class NewsDetailsViewController: UIViewController {
     
     private func setUpView() {
         imgBanner.sd_setImage(with: newsArticle?.imageUrl, placeholderImage: #imageLiteral(resourceName: "gradient_bg"))
-        lblAuthor.text = (newsArticle?.author != nil) ? newsArticle?.author : ""
+        lblAuthor.text = (newsArticle?.author != nil) ? "Published by \(newsArticle?.author ?? "")" : ""
         lblTitle.text = newsArticle?.title
-        lblDate.text = newsArticle?.publishedAt
+        lblDate.text = Utilities.formatDateString(dateString: newsArticle?.publishedAt ?? "", toFormat: "dd_MM_yyyy_hh_mm_a")
         txtViewDescription.text = newsArticle?.description
     }
     
