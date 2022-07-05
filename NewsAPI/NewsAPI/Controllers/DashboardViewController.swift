@@ -22,6 +22,12 @@ class DashboardViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let newsCategoryCell = UINib(nibName: "NewsCategory", bundle: nil)
+        self.collectionViewNewsCategory.register(newsCategoryCell, forCellWithReuseIdentifier: CollectionViewCellIdentifiers.NewsCategoryCell.rawValue)
+        
+        let newsByCategoryCell = UINib(nibName: "NewsByCategory", bundle: nil)
+        tableViewNewsByCategory.register(newsByCategoryCell, forCellReuseIdentifier: TableViewCellIdentifier.NewsByCategoryCell.rawValue)
+        
         collectionViewNewsCategory.reloadData()
         getLatestNews()
         getNewsByCategory(category: selectedCategory.rawValue)

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsCategoryCell" id="IbS-Rl-Rk4" customClass="NewsCategoryCollectionViewCell" customModule="NewsAPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="ykd-FV-Tfl">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSh-6M-mQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGO-yh-WM9">
+                                <rect key="frame" x="1" y="1" width="168" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDe-p0-fmW">
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lDe-p0-fmW" secondAttribute="trailing" id="1Z6-dK-HdJ"/>
+                                    <constraint firstItem="lDe-p0-fmW" firstAttribute="leading" secondItem="CGO-yh-WM9" secondAttribute="leading" id="Cm1-tk-Qqi"/>
+                                    <constraint firstItem="lDe-p0-fmW" firstAttribute="centerX" secondItem="CGO-yh-WM9" secondAttribute="centerX" id="Mb4-HX-ZYr"/>
+                                    <constraint firstItem="lDe-p0-fmW" firstAttribute="top" secondItem="CGO-yh-WM9" secondAttribute="top" id="Ox8-wP-38K"/>
+                                    <constraint firstAttribute="bottom" secondItem="lDe-p0-fmW" secondAttribute="bottom" id="fbA-BJ-eHc"/>
+                                    <constraint firstItem="lDe-p0-fmW" firstAttribute="centerY" secondItem="CGO-yh-WM9" secondAttribute="centerY" id="oMM-ja-G2c"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Ug-Yk-SZo"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94509803920000002" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CGO-yh-WM9" secondAttribute="bottom" constant="1" id="SDe-gw-bIZ"/>
+                            <constraint firstItem="CGO-yh-WM9" firstAttribute="top" secondItem="JSh-6M-mQJ" secondAttribute="top" constant="1" id="dN9-N2-2tc"/>
+                            <constraint firstAttribute="trailing" secondItem="CGO-yh-WM9" secondAttribute="trailing" constant="1" id="e3i-aT-8Nq"/>
+                            <constraint firstAttribute="height" constant="32" id="gCi-pP-9EA"/>
+                            <constraint firstItem="CGO-yh-WM9" firstAttribute="leading" secondItem="JSh-6M-mQJ" secondAttribute="leading" constant="1" id="tHx-8T-wiL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JSh-6M-mQJ" firstAttribute="leading" secondItem="ykd-FV-Tfl" secondAttribute="leading" id="FTR-ib-TqS"/>
+                    <constraint firstItem="JSh-6M-mQJ" firstAttribute="top" secondItem="ykd-FV-Tfl" secondAttribute="top" id="U8t-4q-QQo"/>
+                    <constraint firstAttribute="trailing" secondItem="JSh-6M-mQJ" secondAttribute="trailing" id="guk-jq-K1E"/>
+                    <constraint firstAttribute="bottom" secondItem="JSh-6M-mQJ" secondAttribute="bottom" id="nQS-1d-YeM"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="170" height="50"/>
+            <connections>
+                <outlet property="lblCategoryName" destination="lDe-p0-fmW" id="DrU-2k-sLV"/>
+                <outlet property="viewInner" destination="CGO-yh-WM9" id="hGM-37-BYB"/>
+                <outlet property="viewOuter" destination="JSh-6M-mQJ" id="N7z-4B-Quq"/>
+            </connections>
+            <point key="canvasLocation" x="192.75362318840581" y="10.714285714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
