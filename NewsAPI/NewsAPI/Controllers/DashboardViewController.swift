@@ -38,7 +38,7 @@ class DashboardViewController: BaseViewController {
                     self.latestNewsList = result?.articles ?? []
                     self.collectionViewLatestNews.reloadData()
                 } else {
-                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.NoResponseFromServer.rawValue)
+                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.ErrorOccured.rawValue)
                 }
             }
         }
@@ -55,7 +55,7 @@ class DashboardViewController: BaseViewController {
                     self.newsByCategoryList = result?.articles ?? []
                     self.tableViewNewsByCategory.reloadData()
                 } else {
-                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.NoResponseFromServer.rawValue)
+                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.ErrorOccured.rawValue)
                 }
             }
         }
@@ -71,7 +71,7 @@ class DashboardViewController: BaseViewController {
                 if result?.status == ResponseStatus.Success.rawValue {
                     // TODO:
                 } else {
-                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.NoResponseFromServer.rawValue)
+                    self.showCustomAlert(title: GeneralErrorTitles.GeneralError.rawValue, message: GeneralErrors.ErrorOccured.rawValue)
                 }
             }
         }

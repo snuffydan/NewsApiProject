@@ -34,24 +34,26 @@ class RegisterViewController: BaseViewController {
         checkValidations(textField: textField)
     }
     
-//    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        if textField == txtEmail {
-//            if (txtEmail.text == "" || !txtEmail.text!.isValidEmail()) {
-//                lblEmailValidation.text = EMAIL_VALIDATION
-//                lblEmailValidation.isHidden = false
-//            } else {
-//                lblEmailValidation.isHidden = true
-//            }
-//        } else if textField == txtPassword {
-//            if txtPassword.text == "" || txtPassword.text!.count < PASSWORD_LENGTH {
-//                lblPasswordValidation.text = PASSWORD_VALIDATION
-//                lblPasswordValidation.isHidden = false
-//            } else {
-//                lblPasswordValidation.isHidden = true
-//            }
-//        }
-//        return true
-//    }
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == txtEmail {
+            if (txtEmail.text == "" || !txtEmail.text!.isValidEmail()) {
+                lblEmailValidation.text = EMAIL_VALIDATION
+                lblEmailValidation.isHidden = false
+            } else {
+                lblEmailValidation.isHidden = true
+            }
+        } else if textField == txtPassword {
+            if txtPassword.text == "" || txtPassword.text!.count < PASSWORD_LENGTH {
+                lblPasswordValidation.text = PASSWORD_VALIDATION
+                lblPasswordValidation.isHidden = false
+            } else {
+                lblPasswordValidation.isHidden = true
+            }
+        } else {
+            checkValidations(textField: textField)
+        }
+        return true
+    }
     
     private func checkValidations(textField: UITextField) {
         if textField == txtEmail {
@@ -88,10 +90,34 @@ class RegisterViewController: BaseViewController {
     }
 
     @IBAction func tappedRegister(_ sender: Any) {
+        let users = Utilities.getAllDataFromDatabase()
+        var isExisting = false
         
+        for user in users {
+            if (txtEmail.text == user.email) || (txtUsername.text == user.username) {
+                isExisting = true
+                break
+            }
+        }
+        
+        if isExisting {
+            self.showCustomAlert(message: GeneralErrors.DuplicateEmail.rawValue)
+        } else {
+            let isSuccess = Utilities.saveToDatabase(email: txtEmail.text ?? "", username: txtUsername.text ?? "", password: txtPassword.text ?? "")
+            
+            if !isSuccess {
+                self.showCustomAlert(message: GeneralErrors.ErrorOccured.rawValue)
+            } else {
+                goBackToLogin()
+            }
+        }
     }
     
     @IBAction func tappedLogIn(_ sender: Any) {
+        goBackToLogin()
+    }
+    
+    private func goBackToLogin() {
         self.navigationController?.popViewController(animated: true)
     }
 }

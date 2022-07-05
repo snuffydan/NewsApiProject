@@ -11,12 +11,9 @@ class CommonAlertPopUpViewController: BaseViewController {
     
     @IBOutlet weak var lblAlertMsg: UILabel!
     @IBOutlet weak var btnOk: UIButton!
-    @IBOutlet weak var btnAction: UIButton!
     @IBOutlet weak var imgViewStatus: UIImageView!
-    @IBOutlet weak var lblTitle: UILabel!
     
     var callbackForOkButton : ((Bool)->())?
-    var callbackForActionButton: ((Bool)->())?
     
     var titleText: String?
     var alertMsg: String?
@@ -27,12 +24,20 @@ class CommonAlertPopUpViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpView()
     }
     
-    @IBAction func actionBtnTapped(_ sender: Any) {
-        self.dismiss(animated: true) {
-            self.callbackForActionButton?(true)
+    private func setUpView() {
+        if (alertMsg != nil) {
+            lblAlertMsg.text = alertMsg
         }
+        
+        if (okBtnTitle != nil) {
+            btnOk.setTitle(okBtnTitle, for: .normal)
+        }
+        
+        imgViewStatus.image = statusImg
     }
     
     @IBAction func okBtnPressed(_ sender: Any) {
