@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let landingVC = UIStoryboard(name: StoryboardIdentifiers.UserInfo.rawValue, bundle: nil).instantiateViewController(withIdentifier: ViewControllerIdentifiers.LoginVC.rawValue) as! LoginViewController
+        let landingVC = UIStoryboard(name: StoryboardIdentifiers.Common.rawValue, bundle: nil).instantiateViewController(withIdentifier: ViewControllerIdentifiers.InitialVC.rawValue) as! InitialViewController
         let navigationController = UINavigationController(rootViewController: landingVC)
         appDelegate.window?.rootViewController = navigationController
         appDelegate.window?.makeKeyAndVisible()

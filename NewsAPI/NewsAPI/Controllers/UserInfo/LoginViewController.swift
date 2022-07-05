@@ -21,6 +21,8 @@ class LoginViewController: BaseViewController {
         
         if user != nil {
             if txtPassword.text == user?.password {
+                UserDefinedConfigs.setIsUserLoggedIn(status: true)
+                
                 let dashboardVC = UIStoryboard(name: StoryboardIdentifiers.Main.rawValue, bundle: nil).instantiateViewController(withIdentifier: ViewControllerIdentifiers.DashboardVC.rawValue) as! DashboardViewController
                 let navigationController = UINavigationController(rootViewController: dashboardVC)
                 appDelegate.window?.rootViewController = navigationController
